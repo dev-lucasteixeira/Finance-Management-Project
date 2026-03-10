@@ -56,6 +56,13 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 	testImplementation 'org.springframework.modulith:spring-modulith-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation("org.mapstruct:mapstruct:1.6.0.Beta1")
+	annotationProcessor("org.mapstruct:mapstruct-processor:1.6.0.Beta1")
+
+	// --- ARCHITECTURE TESTING ---
+	testImplementation("com.tngtech.archunit:archunit-junit5:1.3.0")
+	implementation("com.flagsmith:flagsmith-java-client:1.0.3")
+	implementation("io.getunleash:unleash-client-java:9.2.0")
 }
 
 dependencyManagement {
