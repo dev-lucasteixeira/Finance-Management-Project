@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class UnleashClientConfig { // Renamed to avoid collision
+public class UnleashClientConfig {
 
     @Value("${unleash.api.url:http://localhost:4242/api/}")
     private String unleashApi;
