@@ -9,9 +9,10 @@ import java.util.UUID;
 @Component
 public class BudgetFactory {
 
-    public Budget create(String category, BigDecimal limitAmount) {
+    public Budget create(UUID userId, String category, BigDecimal limitAmount) {
         return new Budget(
                 UUID.randomUUID(),
+                userId,
                 category,
                 limitAmount
         );

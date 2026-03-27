@@ -1,14 +1,18 @@
 package com.lucasteixeira.finance_management.budget.infrastructure;
 
-import com.lucasteixeira.finance_management.budget.domain.Budget;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface BudgetRepository {
-    Optional<Budget> findByCategory(String category);
-    Optional<Budget> findByUserId(UUID id);
-    void save(Budget budget);
+@Repository
+interface BudgetRepository extends JpaRepository<BudgetEntity, UUID> {
 
-    Optional<Budget> findByUserIdAndCategory(UUID userId, String category);
+    Optional<BudgetEntity> findByUserId(UUID userId);
+
+    Optional<BudgetEntity> findByUserIdAndCategory(UUID userId, String category);
+
+    List<BudgetEntity> findAllByUserId(UUID userId);
 }
